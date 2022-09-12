@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="today.ihelio.sample.GeneratorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-09-11T19:49:07" hostname="DESKTOP-P70CS3I" time="0.073">
+  <properties/>
+  <testcase name="findImages()" classname="today.ihelio.sample.GeneratorTest" time="0.014"/>
+  <testcase name="createRandomBook()" classname="today.ihelio.sample.GeneratorTest" time="0.058"/>
+  <system-out><![CDATA[Yes
+id: "ae6c510f-41bb-3729-b314-220d93863715"
+name: "aozioupbt fnnduqpozam"
+author: "yiyzrptclw"
+publish_year: 2008
+price: 208.0
+publication: "dltkgp jo"
+sample {
+  paragraph: "uufeqklelxowtigbiyhmrixg"
+}
+sample {
+  paragraph: "eehbrahvznujasd fibcib"
+}
+image {
+  id: "79f0879d-5644-3998-b149-5eaee95f3e3b"
+  file_path: "src/main/resources/images_source/img1.png"
+  uploaded_at {
+    seconds: 1662925747
+    nanos: 416000000
+  }
+}
+image {
+  id: "0709f154-8a23-3c43-aafc-3becff3ead83"
+  file_path: "src/main/resources/images_source/img2.png"
+  uploaded_at {
+    seconds: 1662925747
+    nanos: 417000000
+  }
+}
+image {
+  id: "2b441ac2-8f83-3493-b117-c073977d77ad"
+  file_path: "src/main/resources/images_source/img3.png"
+  uploaded_at {
+    seconds: 1662925747
+    nanos: 417000000
+  }
+}
+genre: HORROR
+genre: UNKNOWN
+genre: THRILLER
+popularity: 50
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

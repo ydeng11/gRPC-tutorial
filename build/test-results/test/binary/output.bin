@@ -1,0 +1,42 @@
+Yes
++id: "ae6c510f-41bb-3729-b314-220d93863715"
+name: "aozioupbt fnnduqpozam"
+author: "yiyzrptclw"
+publish_year: 2008
+price: 208.0
+publication: "dltkgp jo"
+	sample {
+(  paragraph: "uufeqklelxowtigbiyhmrixg"
+}
+	sample {
+&  paragraph: "eehbrahvznujasd fibcib"
+}
+image {
+-  id: "79f0879d-5644-3998-b149-5eaee95f3e3b"
+9  file_path: "src/main/resources/images_source/img1.png"
+  uploaded_at {
+    seconds: 1662925747
+    nanos: 416000000
+  }
+}
+image {
+-  id: "0709f154-8a23-3c43-aafc-3becff3ead83"
+9  file_path: "src/main/resources/images_source/img2.png"
+  uploaded_at {
+    seconds: 1662925747
+    nanos: 417000000
+  }
+}
+image {
+-  id: "2b441ac2-8f83-3493-b117-c073977d77ad"
+9  file_path: "src/main/resources/images_source/img3.png"
+  uploaded_at {
+    seconds: 1662925747
+    nanos: 417000000
+  }
+}
+genre: HORROR
+genre: UNKNOWN
+genre: THRILLER
+popularity: 50
+

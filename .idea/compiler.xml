@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="15">
+      <module name="GRPC-Tutorial.demo-unary" target="17" />
+      <module name="GRPC-Tutorial.demo-unary.main" target="17" />
+      <module name="GRPC-Tutorial.demo-unary.test" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

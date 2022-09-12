@@ -1,0 +1,34 @@
+syntax = "proto3";
+package book;
+option java_multiple_files = true;
+option java_package = "today.ihelio.grpc";
+
+import "sample_message.proto";
+import "image_message.proto";
+
+message Book {
+  enum Genre {
+    UNKNOWN = 0;
+    FICTION = 1;
+    MYSTERY = 2;
+    THRILLER = 3;
+    HORROR = 4;
+    HISTORICAL = 5;
+    ROMANCE = 6;
+    SCI_FICTION = 7;
+  }
+
+  string id = 1;
+  string name = 2;
+  string author = 3;
+  uint32 publish_year = 4;
+  double price = 5;
+  string publication = 6;
+  uint32 rating = 7;
+  uint32 rating_count = 8;
+  double avg_rating = 9;
+  repeated Sample sample = 10;
+  repeated Image image = 11;
+  repeated Genre genre = 12;
+  optional uint32 popularity = 13;
+}

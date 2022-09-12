@@ -1,0 +1,59 @@
+syntax = "proto3";
+package book;
+option java_multiple_files = true;
+option java_package = "today.ihelio.grpc";
+
+import "book_message.proto";
+
+message CreateBookRequest {
+  Book book = 1;
+}
+
+message CreateBookResponse {
+  string id = 1;
+}
+
+message UploadImageRequest {
+  oneof data {
+    ImageInfo info = 1;
+    bytes chunk_data = 2;
+  }
+}
+
+message ImageInfo {
+  string book_id = 1;
+  string image_type = 2;
+  string file_name = 3;
+}
+
+message UploadImageResponse {
+  string id = 1;
+  uint32 size = 2;
+  string file_path = 3;
+}
+
+message RecommendBookRequest {
+  int32 popularity = 1;
+}
+
+message RecommendBookResponse {
+  string book_id = 1;
+}
+
+message RateBookRequest {
+  string book_id = 1;
+  uint32 rating = 2;
+}
+
+message RateBookResponse {
+  string book_id = 1;
+  uint32 rating_count = 2;
+  double avg_rating = 3;
+}
+
+service BookService {
+  rpc CreateBook(CreateBookRequest) returns (CreateBookResponse) {};
+  rpc UploadImage(stream UploadImageRequest) returns (UploadImageResponse) {};
+  rpc RecommendBook(RecommendBookRequest) returns (stream RecommendBookResponse) {};
+  rpc RateBook(stream RateBookRequest) returns (stream RateBookResponse) {};
+}
