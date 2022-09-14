@@ -35,7 +35,7 @@ public class BookService extends BookServiceGrpc.BookServiceImplBase {
             public void onNext(RateBookRequest request) {
                 String bookID = request.getBookId();
                 Integer rating = request.getRating();
-                Book book = bookStore.RateBook(bookID, rating);
+                Book book = bookStore.rateBook(bookID, rating);
                 RateBookResponse response = RateBookResponse.newBuilder()
                         .setBookId(book.getId())
                         .setRatingCount(book.getRatingCount())
@@ -61,9 +61,9 @@ public class BookService extends BookServiceGrpc.BookServiceImplBase {
         Integer popularity = request.getPopularity();
 
         logger.info("checked all books with popularity greater than " + popularity);
-        bookStore.SearchBook(Context.current(), popularity, new BookStream() {
+        bookStore.searchBook(Context.current(), popularity, new BookStream() {
             @Override
-            public void Send(String bookID) {
+            public void send(String bookID) {
                 logger.info("found book: " + bookID);
                 RecommendBookResponse response = RecommendBookResponse.newBuilder().setBookId(bookID).build();
                 responseObserver.onNext(response);
@@ -89,7 +89,7 @@ public class BookService extends BookServiceGrpc.BookServiceImplBase {
 
                     bookID = info.getBookId();
                     imageData = new ByteArrayOutputStream();
-
+//                  check if the book exists in the book store
                     Book found = bookStore.findBook(bookID);
                     if (found == null) {
                         responseObserver.onError(

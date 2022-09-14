@@ -25,7 +25,7 @@ public class InMemoryBookStore implements BookStore{
     ConcurrentMap<String, Book> inMemoryBookStore;
 
     @Override
-    public Book RateBook(String bookID, Integer rating) {
+    public Book rateBook(String bookID, Integer rating) {
         Book book = inMemoryBookStore.getOrDefault(bookID, null);
         if (book == null) {
             throw NOT_FOUND.withDescription("book not found")
@@ -53,7 +53,7 @@ public class InMemoryBookStore implements BookStore{
     }
 
     @Override
-    public void SearchBook(Context ctx, Integer popularity, BookStream bookStream) {
+    public void searchBook(Context ctx, Integer popularity, BookStream bookStream) {
         for (Map.Entry<String, Book> entry : inMemoryBookStore.entrySet()) {
             if (ctx.isCancelled()) {
                 logger.info("context is cancelled");
@@ -62,7 +62,7 @@ public class InMemoryBookStore implements BookStore{
 
             Book book = entry.getValue();
             if (book.getPopularity() >= popularity) {
-                bookStream.Send(book.getId());
+                bookStream.send(book.getId());
             }
         }
     }

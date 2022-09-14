@@ -6,5 +6,5 @@ package today.ihelio.learngrpc;
  * @package today.ihelio.learngrpc
  */
 public interface BookStream {
-    void Send(String bookID);
+    void send(String bookID);
 }

@@ -1,6 +1,5 @@
 package today.ihelio.learngrpc;
 
-import com.google.common.util.concurrent.RateLimiter;
 import com.google.protobuf.ByteString;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -12,7 +11,6 @@ import today.ihelio.sample.Generator;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
@@ -82,7 +80,7 @@ public class BookClient {
 
     public void uploadImage(String bookID, Image image) throws InterruptedException {
         final CountDownLatch latch = new CountDownLatch(1);
-
+// we use asyncStub instead of blockingStub for streaming connection
         StreamObserver<UploadImageRequest> requestObserver = asyncStub.withDeadlineAfter(5, SECONDS)
                 .uploadImage(new StreamObserver<UploadImageResponse>() {
                     @Override

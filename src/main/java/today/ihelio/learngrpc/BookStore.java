@@ -13,7 +13,7 @@ public interface BookStore {
 
     Book findBook(String bookID);
 
-    void SearchBook(Context current, Integer popularity, BookStream bookStream);
+    void searchBook(Context current, Integer popularity, BookStream bookStream);
 
-    Book RateBook(String bookID, Integer rating);
+    Book rateBook(String bookID, Integer rating);
 }
